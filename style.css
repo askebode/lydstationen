@@ -1,0 +1,287 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F7F7F7;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+header {
+    background-color: #71cdc0;
+    color: white;
+    text-align: left;
+    padding: 60px 20px 20px 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 4rem;
+    text-transform: uppercase;
+    border-bottom: 10px solid lightpink;
+    display: inline-flex;
+    color: lightpink;
+}
+
+p {
+    font-weight: lighter;
+}
+
+#calendar {
+    width: 100%;
+}
+
+section div {
+    width: 100%;
+    padding: 2rem;
+}
+
+#calendar div {
+    padding: 0;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E87463;
+    padding: 20px;
+    z-index: 999;
+    transition: 1s;
+    /* make sure the menu is on top of other elements */
+}
+
+nav span {
+    color: #E87463;
+    font-weight: bold;
+    border-bottom: 2px solid #E87463;
+}
+
+#calendar-page div {
+    padding-bottom: 0;
+}
+
+nav a {
+    color: #000;
+    background-color: lightpink;
+    padding: 5px;
+    text-decoration: none;
+
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-right: 2rem;
+    font-weight: lighter;
+}
+
+nav a:hover {
+    color: lightpink;
+    border-bottom: none;
+    transition-duration: 0.5s;
+}
+
+nav ul {
+    display: flex;
+}
+
+label {
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-right: 20px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav.white {
+    background-color: #fff;
+}
+
+:root {
+    --fc-border-color: none;
+    --fc-daygrid-event-dot-width: 5px;
+    --fc-today-bg-color: lightpink;
+}
+
+.fc .fc-button-primary {
+    background-color: lightpink;
+    border: none;
+}
+
+.fc-toolbar-title {
+    color: black;
+}
+
+.fc .fc-button-primary:disabled {
+    background-color: lightpink;
+}
+
+section {
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+
+/* Add a client list section */
+#client-list {
+    width: 100%;
+    list-style: none;
+    margin: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#client-list li {
+    background-color: #71cdc0;
+    color: white;
+    padding: 1rem;
+    margin: 0.5rem;
+
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#client-list li:nth-child(odd) {
+    background-color: #71abc0;
+}
+
+
+.cta-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #71cdc0;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+section h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: lightpink;
+}
+
+section p {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    background: -webkit-linear-gradient(left, #eee, lightpink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section img {
+    max-width: 50%;
+    height: auto;
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+.triangle {
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to bottom right, #ffcada 0%, transparent 50%, transparent 100%);
+    opacity: 0.3;
+    padding: 0;
+    z-index: 0;
+}
+
+/* Style the label to look like a checkbox */
+#clients label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 18px;
+    margin-right: 10px;
+    font-size: 12px;
+    user-select: none;
+}
+
+#contact label {
+    padding: 10px 0px;
+    width: 100%;
+}
+
+#contact input,
+#contact textarea,
+#contact button {
+    background-color: transparent;
+    border: 1px solid white;
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+#contact textarea {
+    height: 10rem;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    position: absolute;
+    z-index: 1;
+}
+
+
+#clients label:before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    background-color: #fff;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+/* Change the color of the checkbox when checked */
+input[type="checkbox"]:checked + label:before {
+    background-color: #71cdc0;
+    border: none;
+}

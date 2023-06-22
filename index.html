@@ -1,3 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lydstationen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.6/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.6/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.6/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.6/locales/da.global.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+
+                displayEventTime: false, // don't show the time column in list view
+
+                googleCalendarApiKey: 'AIzaSyAxFgqrMVenONCc9CMW4qZQZ09s6Vmyl8Q',
+                locale: 'da', // the initial locale
+                events: 'b31a2a10c6f041248813d28368ed3f87451ca20f2f8b9345300454a984cf29e8@group.calendar.google.com',
+                aspectRatio: 2,
+                themeSystem: 'standard',
+                eventColor: '#E87463',
+                eventClick: function(info) {
+                    info.jsEvent.preventDefault(); // don't let the browser navigate
+                },
+                headerToolbar: {
+
+                    start: 'title',
+                    center: '',
+                    end: 'today,prev,next'
+
+                }, // buttons for switching between views
+                initialView: 'dayGridMonth'
+            });
+            calendar.render();
+        });
+
+    </script>
+</head>
+
 <body>
-  Hej!
+    <nav>
+        <span>LYDSTATIONEN</span>
+        <ul>
+            <li><a href="#clients">Kunder</a></li>
+            <li><a href="#about">Om Lydstationen</a></li>
+            <li><a href="#calendar-page">Kalender</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+    <section style="background-color: #E87463; padding-top: 80px;">
+        <div>
+            <h1>Lydstationen</h1>
+            <p>Lydstationen er et hyggeligt lydstudie på Sydfyn, lidt udenfor Svendborg. Studiet er ejet og drevet af Aske Bode. Med et 40m2 indspilningsrum, kontrolrum, køkken og bad er her de hyggeligste rammer for at indspille dit næste projekt ▼</p>
+            <!--            <a href="#" class="cta-btn">Book a Session</a>-->
+        </div>
+        <img src="images/pic1.jpeg">
+        <img src="images/pic2.jpeg">
+    </section>
+    <section id="clients" style="background: url(images/bg1.jpg); background-size: cover;">
+        <div>
+            <h2 style="color: black">Udvalgte Kunder</h2>
+            <input id="recording" type="checkbox" name="job" value="recording"><label for="recording">Recording</label>
+            <input id="mix" type="checkbox" name="job" value="mix"><label for="mix">Mix</label>
+            <input id="mastering" type="checkbox" name="job" value="mastering"><label for="mastering">Mastering</label>
+            <input id="foh" type="checkbox" name="job" value="foh"><label for="foh">FOH</label>
+
+            <ul id="client-list">
+                <li data-job="recording mix">HYMNS FROM NINEVEH</li>
+                <li data-job="recording mix">KILL J</li>
+                <li data-job="recording mix">SHY SHY SHY</li>
+                <li data-job="recording foh">BISSE</li>
+                <li data-job="foh">OH LAND</li>
+                <li data-job="foh recording">GULDIMUND</li>
+                <li data-job="mastering">KARL MEYER</li>
+                <li data-job="mastering">NIKOCORLIN</li>
+                <li data-job="mastering">SOFIE CZAJKOWSKA</li>
+                <li data-job="mastering">LASSE STORM</li>
+                <li data-job="mastering">SØREN TORPEGAARD LUND</li>
+                <li data-job="mastering">USSEL</li>
+                <li data-job="mastering">UNG-SKAB</li>
+                <li data-job="recording">ANNIKA AAKJÆR</li>
+                <li data-job="recording">KATINKA</li>
+                <li data-job="foh">PALACE WINTER</li>
+                <li data-job="foh">MASASOLO</li>
+                <li data-job="mastering">APHACA</li>
+                <li data-job="mix">FAVOR</li>
+                <li data-job="recording foh">SLEEP PARTY PEOPLE</li>
+                <li data-job="mix recording">THE ECLECTIC MONIKER</li>
+                <li data-job="recording">TÅRN</li>
+                <li data-job="mastering">UDEN ORD</li>
+                <li data-job="mix mastering">PENNY POLICE</li>
+                <li data-job="recording">THE KUTIMANGOES</li>
+                <li data-job="recording mix">LHUMA</li>
+                <li data-job="recording mix">WHERE DID NORA GO</li>
+                <li data-job="recording mix">KOM VI LØBER</li>
+                <li data-job="mix">BLITZKRIG</li>
+                <li data-job="mastering">NAUSIA</li>
+                <li data-job="mix mastering">ANDORRA</li>
+                <li data-job="mix">PETER AMORAS</li>
+                <li data-job="mix">JOSA BARCK</li>
+                <li data-job="foh">SVIN</li>
+                <li data-job="recording mix">KITES &amp; KOMETS</li>
+                <li data-job="recording foh">TOM BJERG</li>
+                <li data-job="mastering">THE OCEANS</li>
+                <li data-job="mix">PHOSPHOR KID</li>
+                <li data-job="mastering">AUGUSTINE</li>
+                <li data-job="recording">KAIZER</li>
+                <li data-job="mastering">MARTHA ELIZABETH</li>
+                <li data-job="mix recording">STRIVING VINES</li>
+                <li data-job="foh">JENS LYSDAL</li>
+                <li data-job="mix">KASPER STAUB</li>
+                <li data-job="mastering">VESTBO TRIO</li>
+                <li data-job="mix recording">JETSI KAIN</li>
+                <li data-job="recording">MECHANICAL BIRD</li>
+                <li data-job="mastering">DINNER BOI</li>
+                <li data-job="recording">SITREKIN</li>
+                <li data-job="recording mix">HEIMATT</li>
+                <li data-job="mastering">GOLDIE CHORUS</li>
+                <li data-job="recording">DISA</li>
+                <li data-job="mastering">NEON PRIEST</li>
+                <li data-job="recording">GIRLS IN AIRPORTS</li>
+                <li data-job="recording mix">NORTHERN ASSEMBLY</li>
+                <li data-job="mastering">QUICK QUICK OBEY</li>
+                <li data-job="recording mix">SOFIA HEDIA</li>
+                <li data-job="recording">BATTLEKAT</li>
+            </ul>
+        </div>
+    </section>
+    <section id="about" style="background-color: lightpink">
+        <div>
+            <h2 style="color: white">Om Lydstationen</h2>
+            <h3>Desk</h3>
+            <ul>
+                <li>Trident Series 65 24-channel Mixer</li>
+            </ul>
+            <h3>Monitoring</h3>
+            <ul>
+                <li>PSI Audio A21</li>
+                <li>Dynaudio 18s</li>
+            </ul>
+        </div>
+        <img src="images/pic3.jpeg">
+        <img src="images/pic4.jpeg">
+    </section>
+    <section style="background: url(images/bg2.jpg); background-size: cover;" id="calendar-page">
+        <div>
+            <h2 style="color: #E87463">Kalender</h2>
+        </div>
+        <div id='calendar'></div>
+    </section>
+    <section id="contact" style="background-color: #E87463;">
+        <div class="triangle"></div>
+        <div>
+            <h2 style="">Kontakt</h2>
+            <!-- modify this form HTML and place wherever you want your form -->
+            <form action="https://formspree.io/f/mbjewpjy" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="name">Navn:</label>
+                <input type="text" id="name" name="name">
+                <label for="message">Besked:</label>
+                <textarea id="message" name="message"></textarea>
+
+                <!-- your other form fields go here -->
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+    <script src="script.js"></script>
 </body>
+
+</html>
