@@ -1038,6 +1038,35 @@ input[type="checkbox"]:checked+label {
     border-bottom-color: var(--paper);
 }
 
+/* ---------------- EU-støtte ---------------- */
+.funding-inner {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    max-width: 760px;
+}
+
+.funding-flag {
+    width: 160px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    flex-shrink: 0;
+}
+
+.funding-statement {
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    color: var(--brown);
+    margin: 0 0 6px;
+}
+
+.funding-text p {
+    color: var(--brown-soft);
+    margin: 0;
+}
+
 /* ---------------- Responsive ---------------- */
 @media (max-width: 760px) {
     .nav-toggle {
