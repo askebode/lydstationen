@@ -77,6 +77,27 @@
     background: var(--cream);
 }
 
+/* ---------------- Større events ---------------- */
+.larger-events {
+    text-align: center;
+    padding: clamp(40px, 6vw, 72px) clamp(24px, 10vw, 200px);
+    border-top: 1px solid var(--line);
+    margin-top: 48px;
+}
+
+.larger-events h2 {
+    color: var(--brown);
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 16px;
+}
+
+.larger-events p {
+    color: var(--brown-soft);
+    font-size: 1.05rem;
+    max-width: 520px;
+    margin: 0 auto 28px;
+}
+
 .landing-wrap {
     max-width: 1200px;
     margin: 0 auto;
