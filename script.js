@@ -1,77 +1,75 @@
-        // Select all the links in the menu
-        console.log("hej");
-        const menuLinks = document.querySelectorAll('nav a');
+// ============================================================
+//  Lydstationen
+// ============================================================
 
-        // Add a click event listener to each link
-        menuLinks.forEach(link => {
-            link.addEventListener('click', smoothScroll);
+// --- Årstal i footer ---
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// --- Mobilmenu (kun sider med nav) ---
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        const open = navMenu.classList.toggle('open');
+        navToggle.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open);
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('open');
+            navToggle.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', false);
         });
+    });
+}
 
-        function shuffleList(list) {
-            // get all the <li> elements inside the <ul> list
-            const items = Array.from(list.querySelectorAll('li'));
+// --- Nav baggrund ved scroll ---
+const nav = document.getElementById('nav');
+if (nav) {
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+}
 
-            // shuffle the <li> elements using Fisher-Yates algorithm
-            for (let i = items.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-    [items[i], items[j]] = [items[j], items[i]];
-            }
+// --- Landing: forudfyld pakke-felt ved klik på "Book pakke" ---
+const pakkeField = document.getElementById('pakke');
+if (pakkeField) {
+    document.querySelectorAll('[data-pakke]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            pakkeField.value = btn.dataset.pakke;
+        });
+    });
+}
 
-            // append the shuffled <li> elements back into the <ul> list
-            items.forEach(item => list.appendChild(item));
-        }
-        // Smooth scroll function
-        function smoothScroll(event) {
-            event.preventDefault();
+// --- Kundeliste: shuffle + filtrering ---
+const clientList = document.querySelector('#client-list');
 
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            const nav = document.querySelector('nav');
-            const targetOffset = targetSection.offsetTop - nav.offsetHeight;
-            window.scrollTo({
-                top: targetOffset,
-                behavior: 'smooth'
+function shuffleList(list) {
+    const items = Array.from(list.querySelectorAll('li'));
+    for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [items[i], items[j]] = [items[j], items[i]];
+    }
+    items.forEach(item => list.appendChild(item));
+}
+
+if (clientList) {
+    shuffleList(clientList);
+    const clients = Array.from(clientList.children);
+    const filterInputs = document.querySelectorAll('[name="job"]');
+
+    filterInputs.forEach(input => {
+        input.addEventListener('change', () => {
+            const checked = Array.from(document.querySelectorAll('[name="job"]:checked'));
+            clients.forEach(client => {
+                const jobs = (client.dataset.job || '').split(' ');
+                const show = checked.length === 0 ||
+                    checked.some(c => jobs.includes(c.value));
+                client.style.display = show ? '' : 'none';
             });
-        }
-
-        const filterInputs = document.querySelectorAll('[name="job"]');
-        const clientList = document.querySelector('#client-list');
-        shuffleList(clientList);
-        const clients = Array.from(clientList.children);
-
-        filterInputs.forEach(input => {
-            input.addEventListener('change', () => {
-                const checkedInputs = Array.from(document.querySelectorAll('[name="' + input.name + '"]:checked'));
-                clients.forEach(client => {
-                    let shouldShow = false;
-                    if (checkedInputs.length === 0) {
-                        shouldShow = true;
-                    } else {
-                        checkedInputs.forEach(checkedInput => {
-                            const checkedValues = checkedInput.value.split(' ');
-                            let matchesValue = false;
-                            checkedValues.forEach(value => {
-                                if (client.dataset[checkedInput.name].includes(value)) {
-                                    matchesValue = true;
-                                }
-                            });
-                            if (matchesValue) {
-                                shouldShow = true;
-                            }
-                        });
-                    }
-                    client.style.display = shouldShow ? 'list-item' : 'none';
-                });
-            });
         });
-
-        const menu = document.querySelector('nav');
-        const threshold = window.innerHeight / 2;
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > threshold) {
-                menu.classList.add('white');
-            } else {
-                menu.classList.remove('white');
-            }
-        });
+    });
+}

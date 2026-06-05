@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="Den Europæiske Unions flag">
+  <rect width="810" height="540" fill="#003399"/>
+  <g fill="#FFCC00">
+    <!-- Ét opretstående stjerne-symbol genbruges på 12 positioner (uret rundt) -->
+    <defs>
+      <polygon id="eu-star" points="0,-30 6.735,-9.27 28.532,-9.27 10.899,3.541 17.634,24.271 0,11.459 -17.634,24.271 -10.899,3.541 -28.532,-9.27 -6.735,-9.27"/>
+    </defs>
+    <use href="#eu-star" x="405" y="90"/>
+    <use href="#eu-star" x="495" y="114.115"/>
+    <use href="#eu-star" x="560.885" y="180"/>
+    <use href="#eu-star" x="585" y="270"/>
+    <use href="#eu-star" x="560.885" y="360"/>
+    <use href="#eu-star" x="495" y="425.885"/>
+    <use href="#eu-star" x="405" y="450"/>
+    <use href="#eu-star" x="315" y="425.885"/>
+    <use href="#eu-star" x="249.115" y="360"/>
+    <use href="#eu-star" x="225" y="270"/>
+    <use href="#eu-star" x="249.115" y="180"/>
+    <use href="#eu-star" x="315" y="114.115"/>
+  </g>
+</svg>
