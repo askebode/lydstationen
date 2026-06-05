@@ -80,9 +80,9 @@
 /* ---------------- Større events ---------------- */
 .larger-events {
     text-align: center;
-    padding: clamp(40px, 6vw, 72px) clamp(24px, 10vw, 200px);
+    margin-top: clamp(48px, 7vw, 80px);
+    padding-top: clamp(40px, 6vw, 72px);
     border-top: 1px solid var(--line);
-    margin-top: 48px;
 }
 
 .larger-events h2 {
