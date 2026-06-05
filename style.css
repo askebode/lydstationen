@@ -1038,6 +1038,26 @@ input[type="checkbox"]:checked+label {
     border-bottom-color: var(--paper);
 }
 
+/* ---------------- EU-note i footer ---------------- */
+.footer-eu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(244, 236, 224, 0.16);
+    color: rgba(244, 236, 224, 0.7);
+    font-size: 0.8rem;
+}
+
+.footer-eu img {
+    width: 30px;
+    height: auto;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
 /* ---------------- EU-støtte ---------------- */
 .funding-inner {
     display: flex;
