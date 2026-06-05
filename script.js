@@ -6,29 +6,43 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// --- Mobilmenu ---
+// --- Mobilmenu (kun sider med nav) ---
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 
-navToggle.addEventListener('click', () => {
-    const open = navMenu.classList.toggle('open');
-    navToggle.classList.toggle('open', open);
-    navToggle.setAttribute('aria-expanded', open);
-});
-
-navMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        navToggle.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', false);
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        const open = navMenu.classList.toggle('open');
+        navToggle.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open);
     });
-});
+
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('open');
+            navToggle.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', false);
+        });
+    });
+}
 
 // --- Nav baggrund ved scroll ---
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-});
+if (nav) {
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+}
+
+// --- Landing: forudfyld pakke-felt ved klik på "Book pakke" ---
+const pakkeField = document.getElementById('pakke');
+if (pakkeField) {
+    document.querySelectorAll('[data-pakke]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            pakkeField.value = btn.dataset.pakke;
+        });
+    });
+}
 
 // --- Kundeliste: shuffle + filtrering ---
 const clientList = document.querySelector('#client-list');
