@@ -461,9 +461,15 @@ nav ul a.active {
 }
 
 .gear-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 32px;
+    column-width: 220px;
+    column-gap: 32px;
+}
+
+.gear-col {
+    break-inside: avoid;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 32px;
 }
 
 .gear-col h4 {
