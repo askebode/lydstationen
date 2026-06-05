@@ -781,6 +781,15 @@ input[type="checkbox"]:checked+label {
     color: var(--cream);
 }
 
+/* ---------------- Udlejning note ---------------- */
+.udlejning-note {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    color: var(--brown-soft);
+    font-size: 0.95rem;
+}
+
 /* ---------------- Steps (udlejning) ---------------- */
 .steps {
     display: grid;
