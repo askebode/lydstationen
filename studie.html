@@ -61,17 +61,24 @@
         document.addEventListener('DOMContentLoaded', function () {
             var calendarEl = document.getElementById('calendar');
             if (!calendarEl) return;
+            // På mobil: lad kalenderen vokse til fuld højde, så hele måneden vises.
+            // På desktop: brug et fast bredde/højde-forhold.
+            function isMobile() { return window.matchMedia('(max-width: 760px)').matches; }
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 displayEventTime: false,
                 googleCalendarApiKey: 'AIzaSyAxFgqrMVenONCc9CMW4qZQZ09s6Vmyl8Q',
                 locale: 'da',
                 events: 'b31a2a10c6f041248813d28368ed3f87451ca20f2f8b9345300454a984cf29e8@group.calendar.google.com',
                 aspectRatio: 1.8,
+                height: isMobile() ? 'auto' : undefined,
                 themeSystem: 'standard',
                 eventColor: '#b85c38',
                 eventClick: function (info) { info.jsEvent.preventDefault(); },
                 headerToolbar: { start: 'title', center: '', end: 'today,prev,next' },
-                initialView: 'dayGridMonth'
+                initialView: 'dayGridMonth',
+                windowResize: function () {
+                    calendar.setOption('height', isMobile() ? 'auto' : undefined);
+                }
             });
             calendar.render();
         });
