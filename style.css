@@ -356,6 +356,14 @@ nav ul a.active {
     max-width: 620px;
 }
 
+/* page-hero knapper */
+.page-hero .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
 /* ============================================================
    Sektioner (generisk)
    ============================================================ */
@@ -773,6 +781,254 @@ input[type="checkbox"]:checked+label {
     color: var(--cream);
 }
 
+/* ---------------- Steps (udlejning) ---------------- */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.step-num {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    color: var(--terracotta);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.step p {
+    margin: 6px 0 0;
+    color: var(--brown-soft);
+}
+
+.steps-note {
+    font-size: 0.88rem;
+    color: var(--brown-soft);
+    font-style: italic;
+    margin: 0;
+}
+
+/* ---------------- Pakker (udlejning) ---------------- */
+.pakker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    align-items: start;
+}
+
+.pakke-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.pakke-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.pakke-card--featured {
+    border-color: var(--terracotta);
+    box-shadow: 0 0 0 2px var(--terracotta);
+}
+
+.pakke-head {
+    background: var(--cream);
+    padding: 28px 28px 22px;
+    border-bottom: 1px solid var(--line);
+}
+
+.pakke-card--featured .pakke-head {
+    background: var(--terracotta);
+    color: var(--paper);
+    border-bottom-color: transparent;
+}
+
+.pakke-label {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.74rem;
+    color: var(--terracotta);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.pakke-card--featured .pakke-label {
+    color: rgba(250, 245, 236, 0.8);
+}
+
+.pakke-head h3 {
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+}
+
+.pakke-desc {
+    font-size: 0.95rem;
+    color: var(--brown-soft);
+    margin: 0 0 18px;
+}
+
+.pakke-card--featured .pakke-desc {
+    color: rgba(250, 245, 236, 0.85);
+}
+
+.pakke-price {
+    font-family: 'Fraunces', serif;
+    font-size: 2.2rem;
+    color: var(--terracotta-dark);
+    line-height: 1.1;
+}
+
+.pakke-card--featured .pakke-price {
+    color: var(--paper);
+}
+
+.pakke-price span {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--brown-soft);
+    display: block;
+}
+
+.pakke-card--featured .pakke-price span {
+    color: rgba(250, 245, 236, 0.8);
+}
+
+.pakke-body {
+    padding: 22px 28px;
+    flex: 1;
+}
+
+.pakke-body h4 {
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.74rem;
+    color: var(--terracotta);
+    margin: 16px 0 10px;
+}
+
+.pakke-body h4:first-child {
+    margin-top: 0;
+}
+
+.pakke-body ul {
+    list-style: none;
+    margin: 0 0 8px;
+    padding: 0;
+}
+
+.pakke-body li {
+    padding: 7px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--brown-soft);
+    font-size: 0.9rem;
+}
+
+.pakke-body li:last-child {
+    border-bottom: none;
+}
+
+.pakke-card .btn {
+    margin: 0 28px 28px;
+    text-align: center;
+}
+
+/* ---------------- Tilvalg (udlejning) ---------------- */
+.tilvalg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: start;
+}
+
+.tilvalg-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 8px;
+}
+
+.tilvalg-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--brown-soft);
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+}
+
+.tilvalg-list li::before {
+    content: "—";
+    color: var(--terracotta);
+    flex-shrink: 0;
+}
+
+/* ---------------- Referencer (udlejning) ---------------- */
+.refs-block {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+}
+
+.refs-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.refs-list li {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 7px 14px;
+    border-radius: 6px;
+    background: var(--cream-2);
+    color: var(--brown);
+    border: 1px solid var(--line);
+}
+
+/* ---------------- Kontakt-detaljer ---------------- */
+.kontakt-details {
+    list-style: none;
+    margin: 28px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.kontakt-details li {
+    color: rgba(250, 245, 236, 0.85);
+    font-size: 0.95rem;
+}
+
+.kontakt-details a {
+    color: var(--paper);
+    border-bottom: 1px solid rgba(250, 245, 236, 0.4);
+    padding-bottom: 1px;
+}
+
+.kontakt-details a:hover {
+    border-bottom-color: var(--paper);
+}
+
 /* ---------------- Responsive ---------------- */
 @media (max-width: 760px) {
     .nav-toggle {
@@ -820,7 +1076,8 @@ input[type="checkbox"]:checked+label {
     .portal-doors,
     .media-row,
     .om-grid,
-    .kontakt-grid {
+    .kontakt-grid,
+    .tilvalg-grid {
         grid-template-columns: 1fr;
     }
 
