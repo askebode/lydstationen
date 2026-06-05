@@ -1,72 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="da">
 
 <head>
-    <title>Lydstationen</title>
+    <meta charset="UTF-8">
+    <title>Lydstationen — Lydstudie & Udlejning på Sydfyn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Lydstationen er et varmt, analogt lydstudie på Sydfyn ved Svendborg. Indspilning, mix og mastering med mulighed for overnatning — og udlejning af anlæg, mikrofoner og mixere.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.6/index.global.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.6/index.global.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.6/index.global.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.6/locales/da.global.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var calendarEl = document.getElementById('calendar');
+            if (!calendarEl) return;
             var calendar = new FullCalendar.Calendar(calendarEl, {
-
-                displayEventTime: false, // don't show the time column in list view
-
+                displayEventTime: false,
                 googleCalendarApiKey: 'AIzaSyAxFgqrMVenONCc9CMW4qZQZ09s6Vmyl8Q',
-                locale: 'da', // the initial locale
+                locale: 'da',
                 events: 'b31a2a10c6f041248813d28368ed3f87451ca20f2f8b9345300454a984cf29e8@group.calendar.google.com',
-                aspectRatio: 2,
+                aspectRatio: 1.8,
                 themeSystem: 'standard',
-                eventColor: '#E87463',
-                eventClick: function(info) {
-                    info.jsEvent.preventDefault(); // don't let the browser navigate
+                eventColor: '#b85c38',
+                eventClick: function (info) {
+                    info.jsEvent.preventDefault();
                 },
                 headerToolbar: {
-
                     start: 'title',
                     center: '',
                     end: 'today,prev,next'
-
-                }, // buttons for switching between views
+                },
                 initialView: 'dayGridMonth'
             });
             calendar.render();
         });
-
     </script>
 </head>
 
 <body>
-    <nav>
-        <span>LYDSTATIONEN</span>
-        <ul>
-            <li><a href="#clients">Kunder</a></li>
-            <li><a href="#about">Om Lydstationen</a></li>
-            <li><a href="#calendar-page">Kalender</a></li>
-            <li><a href="#contact">Kontakt</a></li>
+    <nav id="nav">
+        <a href="#top" class="brand">LYDSTATIONEN</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <ul id="navMenu">
+            <li><a href="#studie">Lydstudie</a></li>
+            <li><a href="#udlejning">Udlejning</a></li>
+            <li><a href="#om">Om mig</a></li>
+            <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
         </ul>
     </nav>
-    <section style="background-color: #E87463; padding-top: 80px;">
-        <div>
-            <h1>Lydstationen</h1>
-            <p>Lydstationen er et hyggeligt lydstudie på Sydfyn, lidt udenfor Svendborg. Studiet er ejet og drevet af Aske Bode. Med et 40m2 indspilningsrum, kontrolrum, køkken og bad er her de hyggeligste rammer for at indspille dit næste projekt ▼</p>
-            <!--            <a href="#" class="cta-btn">Book a Session</a>-->
-        </div>
-        <img src="images/pic1.jpeg">
-        <img src="images/pic2.jpeg">
-    </section>
-    <section id="clients" style="background: url(images/bg1.jpg); background-size: cover;">
-        <div>
-            <h2 style="color: black">Udvalgte Kunder</h2>
-            <input id="recording" type="checkbox" name="job" value="recording"><label for="recording">Recording</label>
-            <input id="mix" type="checkbox" name="job" value="mix"><label for="mix">Mix</label>
-            <input id="mastering" type="checkbox" name="job" value="mastering"><label for="mastering">Mastering</label>
-            <input id="foh" type="checkbox" name="job" value="foh"><label for="foh">FOH</label>
 
+    <!-- ===================== HERO ===================== -->
+    <header id="top" class="hero">
+        <div class="hero-inner">
+            <p class="eyebrow">Lydstudie & udlejning · Sydfyn</p>
+            <h1>Lydstationen</h1>
+            <p class="lead">Et varmt, analogt lydstudie lidt udenfor Svendborg — og udlejning af lyd­udstyr til
+                koncerter og events på Fyn. Drevet af Aske Bode.</p>
+            <div class="hero-actions">
+                <a href="#studie" class="btn btn-solid">Se studiet</a>
+                <a href="#udlejning" class="btn btn-ghost">Lej udstyr</a>
+            </div>
+        </div>
+        <a href="#studie" class="scroll-cue" aria-label="Scroll ned">▼</a>
+    </header>
+
+    <!-- ===================== LYDSTUDIE ===================== -->
+    <section id="studie" class="section section--studie">
+        <div class="section-head">
+            <span class="section-num">01</span>
+            <h2>Lydstudie</h2>
+            <p class="section-intro">Lydstationen er et hyggeligt studie i landlige rammer på Sydfyn. Med et 40&nbsp;m²
+                indspilningsrum, separat kontrolrum, køkken, bad og mulighed for overnatning er her ro og plads til at
+                fordybe sig i dit næste projekt — uanset om det er en plade, en single, en podcast eller en voiceover.</p>
+        </div>
+
+        <div class="media-row">
+            <img src="images/pic1.jpeg" alt="Lydstationens indspilningsrum" loading="lazy">
+            <img src="images/pic2.jpeg" alt="Detalje fra studiet" loading="lazy">
+        </div>
+
+        <div class="cards">
+            <article class="card">
+                <h3>Indspilning</h3>
+                <p>Stort, akustisk behandlet indspilningsrum på 40&nbsp;m² med separat kontrolrum. Plads til alt fra solo
+                    voiceover til fuldt bandsetup.</p>
+            </article>
+            <article class="card">
+                <h3>Mix & mastering</h3>
+                <p>Tag dit projekt hele vejen i mål. Mix og mastering i et rum hvor du kan høre detaljerne — på erfarne
+                    ører og pålidelige monitorer.</p>
+            </article>
+            <article class="card">
+                <h3>Overnatning</h3>
+                <p>Bo på stedet mens I arbejder. Køkken og bad gør det nemt at lave længere sessions ud af nogle dage —
+                    uden stress og pendling.</p>
+            </article>
+        </div>
+
+        <div class="gear-block">
+            <h3 class="gear-title">Udstyr i studiet</h3>
+            <div class="gear-grid">
+                <div class="gear-col">
+                    <h4>Mixerpult</h4>
+                    <ul>
+                        <li>Trident Series 65 — 24-kanals analog mixer</li>
+                    </ul>
+                </div>
+                <div class="gear-col">
+                    <h4>Monitorering</h4>
+                    <ul>
+                        <li>PSI Audio A21</li>
+                        <li>Dynaudio 18S subwoofer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kundeliste / social proof -->
+        <div class="clients">
+            <h3 class="gear-title">Udvalgte kunder</h3>
+            <p class="clients-help">Filtrér efter type:</p>
+            <div class="filters">
+                <input id="recording" type="checkbox" name="job" value="recording"><label for="recording">Recording</label>
+                <input id="mix" type="checkbox" name="job" value="mix"><label for="mix">Mix</label>
+                <input id="mastering" type="checkbox" name="job" value="mastering"><label for="mastering">Mastering</label>
+                <input id="foh" type="checkbox" name="job" value="foh"><label for="foh">FOH</label>
+            </div>
             <ul id="client-list">
                 <li data-job="recording mix">HYMNS FROM NINEVEH</li>
                 <li data-job="recording mix">KILL J</li>
@@ -128,47 +196,113 @@
                 <li data-job="recording">BATTLEKAT</li>
             </ul>
         </div>
-    </section>
-    <section id="about" style="background-color: lightpink">
-        <div>
-            <h2 style="color: white">Om Lydstationen</h2>
-            <h3>Desk</h3>
-            <ul>
-                <li>Trident Series 65 24-channel Mixer</li>
-            </ul>
-            <h3>Monitoring</h3>
-            <ul>
-                <li>PSI Audio A21</li>
-                <li>Dynaudio 18s</li>
-            </ul>
-        </div>
-        <img src="images/pic3.jpeg">
-        <img src="images/pic4.jpeg">
-    </section>
-    <section style="background: url(images/bg2.jpg); background-size: cover;" id="calendar-page">
-        <div>
-            <h2 style="color: #E87463">Kalender</h2>
-        </div>
-        <div id='calendar'></div>
-    </section>
-    <section id="contact" style="background-color: #E87463;">
-        <div class="triangle"></div>
-        <div>
-            <h2 style="">Kontakt</h2>
-            <!-- modify this form HTML and place wherever you want your form -->
-            <form action="https://formspree.io/f/mbjewpjy" method="POST">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                <label for="name">Navn:</label>
-                <input type="text" id="name" name="name">
-                <label for="message">Besked:</label>
-                <textarea id="message" name="message"></textarea>
 
-                <!-- your other form fields go here -->
-                <button type="submit">Send</button>
+        <!-- Booking-kalender -->
+        <div class="calendar-block">
+            <h3 class="gear-title">Ledige datoer</h3>
+            <p class="clients-help">Markerede dage er booket. Skriv endelig for at høre om en dato er ledig.</p>
+            <div id="calendar"></div>
+        </div>
+    </section>
+
+    <!-- ===================== UDLEJNING ===================== -->
+    <section id="udlejning" class="section section--udlejning">
+        <div class="section-head">
+            <span class="section-num">02</span>
+            <h2>Udlejning</h2>
+            <p class="section-intro">Skal du bruge lyd til en koncert, en fest eller et event på Fyn? Jeg lejer
+                kvalitets­udstyr ud til fair priser — fra komplette PA-anlæg til mikrofoner og mixere. Hjælp til
+                opsætning og rådgivning kan tilkøbes.</p>
+        </div>
+
+        <!-- NB: Aske — ret nedenstående til med dit faktiske udlejningsgrej -->
+        <div class="rental-grid">
+            <article class="rental-card">
+                <span class="rental-icon">🔊</span>
+                <h3>Anlæg & PA</h3>
+                <ul>
+                    <li>Aktive højttalere (tops)</li>
+                    <li>Subwoofere</li>
+                    <li>Stativer & kabling</li>
+                    <li>Monitorer</li>
+                </ul>
+            </article>
+            <article class="rental-card">
+                <span class="rental-icon">🎤</span>
+                <h3>Mikrofoner</h3>
+                <ul>
+                    <li>Dynamiske vokalmikrofoner</li>
+                    <li>Instrumentmikrofoner</li>
+                    <li>Kondensatormikrofoner</li>
+                    <li>Mikrofonstativer</li>
+                </ul>
+            </article>
+            <article class="rental-card">
+                <span class="rental-icon">🎛️</span>
+                <h3>Mixere & teknik</h3>
+                <ul>
+                    <li>Digitale mixerpulte</li>
+                    <li>Analoge mixere</li>
+                    <li>DI-bokse & multikabler</li>
+                    <li>Trådløse systemer</li>
+                </ul>
+            </article>
+        </div>
+
+        <div class="rental-cta">
+            <p>Mangler du noget bestemt, eller er du i tvivl om hvad du har brug for?</p>
+            <a href="#kontakt" class="btn btn-solid">Hør om udlejning</a>
+        </div>
+    </section>
+
+    <!-- ===================== OM MIG ===================== -->
+    <section id="om" class="section section--om">
+        <div class="om-grid">
+            <div class="om-text">
+                <span class="section-num">03</span>
+                <h2>Om mig</h2>
+                <p>Jeg hedder <strong>Aske Bode</strong> og står bag Lydstationen. Jeg har arbejdet med lyd i mange år —
+                    som tekniker i studie, som mixer (FOH) til koncerter og med mix og mastering for en bred vifte af
+                    danske kunstnere.</p>
+                <p>Lydstationen er mit forsøg på at samle det hele ét sted: et roligt studie på landet hvor der er tid
+                    til at lave musik ordentligt, og et lager af godt grej som lokale arrangører kan trække på. Kort sagt
+                    — lyd der bare virker, og en uformel, hjælpsom tilgang.</p>
+                <p>Skriv endelig hvis du vil høre mere, vende en idé eller booke en tid.</p>
+            </div>
+            <div class="om-media">
+                <img src="images/pic3.jpeg" alt="Aske Bode i studiet" loading="lazy">
+                <img src="images/pic4.jpeg" alt="Detalje fra studiet" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== KONTAKT ===================== -->
+    <section id="kontakt" class="section section--kontakt">
+        <div class="kontakt-grid">
+            <div class="kontakt-intro">
+                <span class="section-num">04</span>
+                <h2>Kontakt</h2>
+                <p>Vil du indspille, leje udstyr eller bare høre om mulighederne? Skriv til mig — jeg vender hurtigt
+                    tilbage.</p>
+                <p class="kontakt-meta">Lydstationen · Sydfyn ved Svendborg</p>
+            </div>
+            <form action="https://formspree.io/f/mbjewpjy" method="POST">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="name">Navn</label>
+                <input type="text" id="name" name="name" required>
+                <label for="message">Besked</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit" class="btn btn-solid">Send besked</button>
             </form>
         </div>
     </section>
+
+    <footer class="footer">
+        <span class="footer-brand">LYDSTATIONEN</span>
+        <span>© <span id="year"></span> Aske Bode · Sydfyn</span>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 
