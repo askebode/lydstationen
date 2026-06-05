@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Udlejning — Lydstationen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Udlejning af lydudstyr på Fyn: PA-anlæg, mikrofoner og mixere til koncerter, fester og events. Rådgivning og opsætning kan tilkøbes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <nav id="nav">
+        <a href="index.html" class="brand">LYDSTATIONEN</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <ul id="navMenu">
+            <li><a href="studie.html">Lydstudie</a></li>
+            <li><a href="udlejning.html" class="active">Udlejning</a></li>
+            <li><a href="om.html">Om mig</a></li>
+            <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <div class="page-hero-inner">
+            <p class="eyebrow">02 — Udlejning</p>
+            <h1>Lyd til din koncert eller event</h1>
+            <p class="lead">Skal du bruge lyd til en koncert, en fest eller et arrangement på Fyn? Jeg lejer
+                kvalitetsudstyr ud til fair priser — fra komplette PA-anlæg til mikrofoner og mixere. Hjælp til
+                opsætning og rådgivning kan tilkøbes.</p>
+        </div>
+    </header>
+
+    <section class="section section--paper">
+        <!-- NB: Aske — ret nedenstående til med dit faktiske udlejningsgrej -->
+        <div class="rental-grid">
+            <article class="rental-card">
+                <span class="rental-icon">🔊</span>
+                <h3>Anlæg & PA</h3>
+                <ul>
+                    <li>Aktive højttalere (tops)</li>
+                    <li>Subwoofere</li>
+                    <li>Stativer & kabling</li>
+                    <li>Monitorer</li>
+                </ul>
+            </article>
+            <article class="rental-card">
+                <span class="rental-icon">🎤</span>
+                <h3>Mikrofoner</h3>
+                <ul>
+                    <li>Dynamiske vokalmikrofoner</li>
+                    <li>Instrumentmikrofoner</li>
+                    <li>Kondensatormikrofoner</li>
+                    <li>Mikrofonstativer</li>
+                </ul>
+            </article>
+            <article class="rental-card">
+                <span class="rental-icon">🎛️</span>
+                <h3>Mixere & teknik</h3>
+                <ul>
+                    <li>Digitale mixerpulte</li>
+                    <li>Analoge mixere</li>
+                    <li>DI-bokse & multikabler</li>
+                    <li>Trådløse systemer</li>
+                </ul>
+            </article>
+        </div>
+
+        <div class="rental-cta">
+            <p>Mangler du noget bestemt, eller er du i tvivl om hvad du har brug for?</p>
+            <a href="#kontakt" class="btn btn-solid">Hør om udlejning</a>
+        </div>
+    </section>
+
+    <!-- ===================== KONTAKT ===================== -->
+    <section id="kontakt" class="section section--kontakt">
+        <div class="kontakt-grid">
+            <div class="kontakt-intro">
+                <span class="section-num">Kontakt</span>
+                <h2>Få et tilbud</h2>
+                <p>Fortæl mig om dit arrangement — dato, sted og hvad du skal bruge — så finder vi den rigtige løsning.</p>
+                <p class="kontakt-meta">Lydstationen · Sydfyn ved Svendborg</p>
+            </div>
+            <form action="https://formspree.io/f/mbjewpjy" method="POST">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="name">Navn</label>
+                <input type="text" id="name" name="name" required>
+                <label for="message">Besked</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit" class="btn">Send besked</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <span class="footer-brand">LYDSTATIONEN</span>
+        <nav class="footer-nav">
+            <a href="studie.html">Lydstudie</a>
+            <a href="udlejning.html">Udlejning</a>
+            <a href="om.html">Om mig</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+        <span>© <span id="year"></span> Aske Bode · Sydfyn</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
