@@ -1,0 +1,84 @@
+/* ============================================================
+   landing.css — gælder kun udlejning-landing.html
+   ============================================================ */
+
+.landing-body {
+    background: var(--cream);
+}
+
+/* Hero uden fast nav */
+.landing-hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px clamp(24px, 8vw, 120px) 70px;
+    background:
+        radial-gradient(120% 90% at 80% 0%, #e8d2bb 0%, transparent 55%),
+        linear-gradient(160deg, var(--cream) 0%, #ecdcc8 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.landing-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(184, 92, 56, 0.06) 1px, transparent 1px);
+    background-size: 4px 4px;
+    pointer-events: none;
+}
+
+.landing-brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    font-size: 0.9rem;
+    color: var(--terracotta-dark);
+    display: inline-block;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.landing-hero-inner {
+    max-width: 720px;
+    position: relative;
+    z-index: 1;
+}
+
+.landing-hero h1 {
+    font-size: clamp(3rem, 10vw, 6.5rem);
+    color: var(--brown);
+    margin-bottom: 22px;
+}
+
+.landing-hero .lead {
+    font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+    color: var(--brown-soft);
+    max-width: 580px;
+    margin: 0 0 34px;
+}
+
+.landing-hero strong {
+    color: var(--terracotta-dark);
+}
+
+/* Sektioner */
+.landing-section {
+    padding: clamp(56px, 9vw, 120px) 0;
+}
+
+.landing-section--paper {
+    background: var(--paper);
+}
+
+.landing-section--cream {
+    background: var(--cream);
+}
+
+.landing-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(24px, 8vw, 120px);
+}
