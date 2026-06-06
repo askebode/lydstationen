@@ -422,6 +422,19 @@ nav ul a.active {
     box-shadow: var(--shadow);
 }
 
+.media-single {
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+.media-single img {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
 /* ---------------- Kort ---------------- */
 .cards {
     display: grid;
