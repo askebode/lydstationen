@@ -73,3 +73,42 @@ if (clientList) {
         });
     });
 }
+
+// --- Kontaktformular: send uden at forlade siden (Formspree AJAX) ---
+function showFormError(form, btn, original) {
+    if (btn) { btn.disabled = false; btn.textContent = original; }
+    if (!form.querySelector('.form-error')) {
+        const p = document.createElement('p');
+        p.className = 'form-error';
+        p.textContent = 'Beskeden kunne ikke sendes lige nu. Prøv igen, eller ring/skriv direkte.';
+        form.appendChild(p);
+    }
+}
+
+document.querySelectorAll('form[action*="formspree"]').forEach(form => {
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        const original = btn ? btn.textContent : '';
+        const oldError = form.querySelector('.form-error');
+        if (oldError) oldError.remove();
+        if (btn) { btn.disabled = true; btn.textContent = 'Sender …'; }
+
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        }).then(res => {
+            if (res.ok) {
+                form.innerHTML =
+                    '<div class="form-success">' +
+                    '<h3>Tak for din besked!</h3>' +
+                    '<p>Jeg vender tilbage hurtigst muligt. Haster det, er du velkommen til at ringe på ' +
+                    '<a href="tel:+4522940935">+45 22 94 09 35</a>.</p>' +
+                    '</div>';
+            } else {
+                showFormError(form, btn, original);
+            }
+        }).catch(() => showFormError(form, btn, original));
+    });
+});

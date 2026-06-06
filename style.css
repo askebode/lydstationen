@@ -768,6 +768,38 @@ input[type="checkbox"]:checked+label {
     color: var(--paper);
 }
 
+.section--kontakt button:disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+
+/* Formular-kvittering og -fejl */
+.form-success h3 {
+    font-size: 1.7rem;
+    color: var(--paper);
+    margin-bottom: 10px;
+}
+
+.form-success p {
+    color: rgba(250, 245, 236, 0.92);
+    margin: 0;
+}
+
+.form-success a {
+    color: var(--paper);
+    border-bottom: 1px solid rgba(250, 245, 236, 0.5);
+    padding-bottom: 1px;
+}
+
+.form-error {
+    margin: 14px 0 0;
+    padding: 11px 14px;
+    border-radius: 8px;
+    background: rgba(44, 30, 22, 0.22);
+    color: var(--paper);
+    font-size: 0.9rem;
+}
+
 /* ---------------- Footer ---------------- */
 .footer {
     background: var(--brown);
