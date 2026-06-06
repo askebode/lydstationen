@@ -719,13 +719,6 @@ input[type="checkbox"]:checked+label {
     font-size: 1.1rem;
 }
 
-.kontakt-meta {
-    margin-top: 26px;
-    font-size: 0.9rem !important;
-    letter-spacing: 0.05em;
-    color: rgba(250, 245, 236, 0.7) !important;
-}
-
 .section--kontakt form {
     display: flex;
     flex-direction: column;
