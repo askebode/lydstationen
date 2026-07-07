@@ -1092,7 +1092,8 @@ input[type="checkbox"]:checked+label {
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 10px 14px;
     margin-top: 18px;
     padding-top: 18px;
     border-top: 1px solid rgba(244, 236, 224, 0.16);
@@ -1101,9 +1102,8 @@ input[type="checkbox"]:checked+label {
 }
 
 .footer-eu img {
-    width: 30px;
-    height: auto;
-    border-radius: 2px;
+    height: 46px;
+    width: auto;
     flex-shrink: 0;
 }
 
