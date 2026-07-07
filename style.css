@@ -1102,8 +1102,9 @@ input[type="checkbox"]:checked+label {
 }
 
 .footer-eu img {
-    height: 46px;
-    width: auto;
+    width: 440px;
+    max-width: 100%;
+    height: auto;
     flex-shrink: 0;
 }
 
