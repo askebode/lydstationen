@@ -50,7 +50,15 @@
 .landing-hero h1 {
     font-size: clamp(3rem, 10vw, 6.5rem);
     color: var(--brown);
-    margin-bottom: 22px;
+    margin-bottom: 6px;
+}
+
+.hero-sub {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(1.3rem, 3.6vw, 2rem);
+    color: var(--terracotta-dark);
+    margin: 0 0 26px;
 }
 
 .landing-hero .lead {
@@ -141,6 +149,15 @@
     margin: 18px 0 0;
     font-size: 0.95rem;
     color: var(--brown-soft);
+    max-width: 520px;
+}
+
+.hero-social {
+    margin: 14px 0 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+    color: var(--brown-soft);
+    opacity: 0.85;
     max-width: 520px;
 }
 
