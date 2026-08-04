@@ -20,7 +20,7 @@
 var GA4_ID         = 'G-LFBWEKEN19';               // Google Analytics 4 — AKTIVT
 var ADS_ID         = 'AW-17942137784';             // Google Ads konto-ID — AKTIVT
 var ADS_CALL_LABEL = 'AW-17942137784/XXXXXXXX';    // Konvertering: telefonopkald (indsæt label)
-var ADS_FORM_LABEL = 'AW-17942137784/XXXXXXXX';    // Konvertering: booking/formular (indsæt label)
+var ADS_FORM_LABEL = 'AW-17942137784/f9yYCNmq1fYbELiXvetC'; // Konvertering: booking/formular — AKTIVT
 // ────────────────────────────────────────────────────────────
 
 function isSet(id) {
