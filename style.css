@@ -52,6 +52,10 @@ a {
 img {
     display: block;
     max-width: 100%;
+    /* height:auto er nødvendig, når <img> har width/height-attributter:
+       ellers vinder attributtens højde over aspect-ratio, og billedet
+       bliver højt og smalt på mobil. */
+    height: auto;
 }
 
 /* ---------------- Navigation ---------------- */
