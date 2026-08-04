@@ -19,7 +19,7 @@
 // ── DINE ID'er ──────────────────────────────────────────────
 var GA4_ID         = 'G-LFBWEKEN19';               // Google Analytics 4 — AKTIVT
 var ADS_ID         = 'AW-17942137784';             // Google Ads konto-ID — AKTIVT
-var ADS_CALL_LABEL = 'AW-17942137784/XXXXXXXX';    // Konvertering: telefonopkald (indsæt label)
+var ADS_CALL_LABEL = 'AW-17942137784/ULonCI_l0tscELiXvetC'; // Konvertering: telefonopkald — AKTIVT
 var ADS_FORM_LABEL = 'AW-17942137784/f9yYCNmq1fYbELiXvetC'; // Konvertering: booking/formular — AKTIVT
 // ────────────────────────────────────────────────────────────
 
@@ -56,9 +56,17 @@ gtag('consent', 'default', {
     if (isSet(ADS_ID)) gtag('config', ADS_ID);
 })();
 
-// Hjælper: send en Google Ads-konvertering (kun hvis label er sat)
-function adsConversion(sendTo) {
-    if (isSet(sendTo)) gtag('event', 'conversion', { send_to: sendTo });
+// Hjælper: send en Google Ads-konvertering (kun hvis label er sat).
+//  extra = valgfrie parametre, fx { value: 1.0, currency: 'DKK' }.
+function adsConversion(sendTo, extra) {
+    if (!isSet(sendTo)) return;
+    var params = { send_to: sendTo };
+    if (extra) {
+        for (var k in extra) {
+            if (Object.prototype.hasOwnProperty.call(extra, k)) params[k] = extra[k];
+        }
+    }
+    gtag('event', 'conversion', params);
 }
 
 // ── Event-måling ────────────────────────────────────────────
@@ -72,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 event_category: 'kontakt',
                 event_label: link.getAttribute('href')
             });
-            adsConversion(ADS_CALL_LABEL);
+            adsConversion(ADS_CALL_LABEL, { value: 1.0, currency: 'DKK' });
         });
     });
 
