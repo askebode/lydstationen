@@ -100,6 +100,8 @@ document.querySelectorAll('form[action*="formspree"]').forEach(form => {
             headers: { 'Accept': 'application/json' }
         }).then(res => {
             if (res.ok) {
+                // Signalér til analytics.js at en booking/besked er sendt (konvertering)
+                document.dispatchEvent(new CustomEvent('lydstationen:booking-success'));
                 form.innerHTML =
                     '<div class="form-success">' +
                     '<h3>Tak for din besked!</h3>' +
