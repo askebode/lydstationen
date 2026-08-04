@@ -50,10 +50,34 @@
         "addressCountry": "DK"
       },
       "areaServed": ["Svendborg", "Sydfyn", "Fyn"],
-      "image": "https://lydstationen.dk/images/og-udlejning.jpg"
+      "image": "https://lydstationen.dk/images/og-udlejning.jpg",
+      "priceRange": "1.000–2.500 kr./døgn",
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "Kompakt festanlæg",
+          "price": "1000",
+          "priceCurrency": "DKK",
+          "description": "Lej lydanlæg til mindre fester, taler og baggrundsmusik — op til ca. 60–80 personer."
+        },
+        {
+          "@type": "Offer",
+          "name": "Festanlæg med bas",
+          "price": "1500",
+          "priceCurrency": "DKK",
+          "description": "Lej lydanlæg med subs til fest og dansegulv — op til ca. 120–150 personer."
+        },
+        {
+          "@type": "Offer",
+          "name": "Koncertanlæg",
+          "price": "2500",
+          "priceCurrency": "DKK",
+          "description": "Lej koncertanlæg med scenemonitorer til bands, foreninger og mindre festivaler."
+        }
+      ]
     }
     </script>
-    <script src="analytics.js"></script>
+    <script src="analytics.js" defer></script>
 </head>
 
 <body class="landing-body">
@@ -63,7 +87,8 @@
         <div class="landing-hero-inner">
             <a href="index.html" class="landing-brand">LYDSTATIONEN</a>
             <p class="eyebrow">Svendborg & Sydfyn</p>
-            <h1>Perfekt til fest og koncert</h1>
+            <h1>Lej lydanlæg i Svendborg</h1>
+            <p class="hero-sub">Perfekt til fest og koncert</p>
             <p class="lead">Lej professionelt lydanlæg til din privatfest, firmaevent eller koncert.
                 Gennemtestede pakker fra <strong>1.000 kr./døgn</strong> inkl. moms — uden at du skal være
                 lydtekniker.</p>
@@ -73,6 +98,7 @@
             </div>
             <p class="hero-reassure">Ring og få svar med det samme — eller skriv din dato, så bekræfter jeg ledighed
                 hurtigt.</p>
+            <p class="hero-social">Brugt af bl.a. Helios Biograf, CPH Jazzfestival &amp; Svendborg Forsamlingshus</p>
         </div>
     </header>
 
@@ -80,7 +106,8 @@
     <section class="landing-section landing-section--paper" style="padding-bottom:0">
         <div class="landing-wrap">
             <div class="media-single">
-                <img src="images/udlejning-koncert.webp" alt="Lydstationens anlæg i brug til koncert" loading="lazy">
+                <img src="images/udlejning-koncert.webp" alt="Lydstationens anlæg i brug til koncert"
+                    width="1400" height="1050" loading="lazy">
             </div>
         </div>
     </section>
@@ -196,6 +223,7 @@
                 </article>
 
             </div>
+        </div>
         <div class="landing-wrap">
             <div class="larger-events">
                 <h2>Større events?</h2>
@@ -235,7 +263,8 @@
                 <h2>Lyd der bare virker</h2>
             </div>
             <div class="media-single">
-                <img src="images/udlejning-anlaeg.webp" alt="Opstillet PA-anlæg klar til brug" loading="lazy">
+                <img src="images/udlejning-anlaeg.webp" alt="Opstillet PA-anlæg klar til brug"
+                    width="1216" height="880" loading="lazy">
             </div>
             <div class="cards">
                 <article class="card">
@@ -287,15 +316,15 @@
                 <form action="https://formspree.io/f/mbjewpjy" method="POST">
                     <p class="form-intro">Eller skriv din dato — så bekræfter jeg ledighed hurtigt:</p>
                     <label for="dato">Dato for arrangement</label>
-                    <input type="text" id="dato" name="dato" placeholder="fx 14. august 2025" required>
+                    <input type="text" id="dato" name="dato" placeholder="fx 14. august" required>
                     <label for="pakke">Pakke</label>
                     <input type="text" id="pakke" name="pakke" placeholder="fx Pakke 2">
                     <label for="name">Navn</label>
                     <input type="text" id="name" name="name" required>
                     <label for="phone">Telefon</label>
                     <input type="tel" id="phone" name="phone" required>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email (valgfri)</label>
+                    <input type="email" id="email" name="email">
                     <label for="message">Besked — sted, antal gæster, evt. tilvalg</label>
                     <textarea id="message" name="message"></textarea>
                     <button type="submit" class="btn">Send booking</button>
@@ -312,7 +341,8 @@
         </div>
         <span>© <span id="year"></span> Aske Bode · Sydfyn</span>
         <span class="footer-eu">
-            <img src="images/medfinansiering.png" alt="Medfinansieret af Den Europæiske Union">
+            <img src="images/medfinansiering.png" alt="Medfinansieret af Den Europæiske Union"
+                width="4430" height="891" loading="lazy">
         </span>
     </footer>
 
