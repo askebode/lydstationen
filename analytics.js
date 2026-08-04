@@ -2,24 +2,25 @@
 //  Lydstationen — tracking (Google Analytics 4 + Google Ads)
 //
 //  ▸ GA4 er AKTIVT (måle-ID nedenfor).
-//  ▸ Google Ads udfyldes når kontoen/​konverteringerne er
-//    oprettet. Indtil da er Ads-linjerne inaktive og påvirker
-//    hverken siden eller GA4 — du behøver kun at rette 3 linjer.
+//  ▸ Google Ads konto-ID er AKTIVT → remarketing/målgrupper
+//    bygges allerede. Der mangler kun konverterings-LABELS
+//    for at tælle opkald og bookinger som konverteringer.
 //
-//  Sådan aktiverer du Google Ads-konverteringer:
+//  Sådan tænder du de sidste 2 konverteringer:
 //    1) I Google Ads: opret en konvertering for "telefonopkald"
 //       og en for "formular/booking".
-//    2) Kopiér dit konto-ID (AW-…) ind i ADS_ID.
-//    3) Kopiér hver konverterings "send to"-værdi (AW-…/label)
-//       ind i henholdsvis ADS_CALL_LABEL og ADS_FORM_LABEL.
+//    2) For hver konvertering finder du "send to"-værdien, som
+//       ser sådan ud: AW-17942137784/AbC-D_efGhIjKlMn
+//    3) Indsæt telefon-værdien i ADS_CALL_LABEL og
+//       booking-værdien i ADS_FORM_LABEL (erstat …/XXXXXXXX).
 //       Færdig.
 // ============================================================
 
 // ── DINE ID'er ──────────────────────────────────────────────
 var GA4_ID         = 'G-LFBWEKEN19';               // Google Analytics 4 — AKTIVT
-var ADS_ID         = 'AW-XXXXXXXXX';               // Google Ads konto-ID
-var ADS_CALL_LABEL = 'AW-XXXXXXXXX/CallLabel';     // Konvertering: telefonopkald
-var ADS_FORM_LABEL = 'AW-XXXXXXXXX/FormLabel';     // Konvertering: booking/formular
+var ADS_ID         = 'AW-17942137784';             // Google Ads konto-ID — AKTIVT
+var ADS_CALL_LABEL = 'AW-17942137784/XXXXXXXX';    // Konvertering: telefonopkald (indsæt label)
+var ADS_FORM_LABEL = 'AW-17942137784/XXXXXXXX';    // Konvertering: booking/formular (indsæt label)
 // ────────────────────────────────────────────────────────────
 
 function isSet(id) {
