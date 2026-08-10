@@ -737,6 +737,7 @@ input[type="checkbox"]:checked+label {
 }
 
 .section--kontakt input,
+.section--kontakt select,
 .section--kontakt textarea {
     background: rgba(250, 245, 236, 0.1);
     border: 1px solid rgba(250, 245, 236, 0.35);
@@ -745,13 +746,52 @@ input[type="checkbox"]:checked+label {
     color: var(--paper);
     font-family: inherit;
     font-size: 1rem;
+    width: 100%;
 }
 
 .section--kontakt input:focus,
+.section--kontakt select:focus,
 .section--kontakt textarea:focus {
     outline: none;
     border-color: var(--paper);
     background: rgba(250, 245, 236, 0.16);
+}
+
+/* Pakke-dropdown: egen pil, så den ser ud som resten af felterne */
+.section--kontakt select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='%23faf5ec' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 12px 8px;
+    padding-right: 38px;
+    cursor: pointer;
+}
+
+/* Selve listen tegnes af styresystemet — mørk tekst, så den er læsbar */
+.section--kontakt select option {
+    color: var(--ink);
+    background: var(--paper);
+}
+
+/* To felter side om side (falder til én kolonne på mobil) */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 18px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+@media (max-width: 620px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
 }
 
 .section--kontakt textarea {
