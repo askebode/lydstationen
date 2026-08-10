@@ -23,15 +23,14 @@ function track(name, params) {
     if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
 }
 
-function adsConversion(sendTo, extra) {
+// Bemærk: der sendes bevidst INGEN 'value' med herfra.
+// Værdien sættes på hver konvertering inde i Google Ads
+// (Mål → Konverteringer → vælg handlingen → Værdi), så den kan
+// justeres uden at ændre koden. Sender tagget en værdi, vinder
+// den nemlig over den, der er sat i Google Ads.
+function adsConversion(sendTo) {
     if (!sendTo || sendTo.indexOf('XXXX') !== -1) return;
-    var params = { send_to: sendTo };
-    if (extra) {
-        for (var k in extra) {
-            if (Object.prototype.hasOwnProperty.call(extra, k)) params[k] = extra[k];
-        }
-    }
-    track('conversion', params);
+    track('conversion', { send_to: sendTo });
 }
 
 // ── Event-måling ────────────────────────────────────────────
@@ -45,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 event_category: 'kontakt',
                 event_label: link.getAttribute('href')
             });
-            adsConversion(ADS_CALL_LABEL, { value: 1.0, currency: 'DKK' });
+            adsConversion(ADS_CALL_LABEL);
         });
     });
 
