@@ -94,11 +94,12 @@
         gtag('js', new Date());
         gtag('config', 'AW-17942137784'); // Google Ads — AKTIVT
 
-        // Google Analytics 4. G-LFBWEKEN19 gav 404 hos Google og er
-        // altså ikke et gyldigt måle-ID. Indsæt det rigtige ID fra
-        // GA4 → Admin → Datastreams → Måle-ID, så tænder GA4 igen.
-        // var GA4_ID = 'G-XXXXXXXXXX';
-        // gtag('config', GA4_ID);
+        // Google Analytics 4 (G-LFBWEKEN19) måles GENNEM tagget ovenfor:
+        // GA4-streamen bruger det eksisterende Google-tag fra Ads, og
+        // G-ID'et er tilføjet som destination hos Google. Derfor har
+        // G-ID'et ingen egen tag-container (gtag/js?id=G-… giver 404),
+        // og der skal IKKE tilføjes gtag('config', 'G-LFBWEKEN19') her
+        // — det ville tælle sidevisninger dobbelt.
     </script>
     <script src="events.js" defer></script>
 </head>
