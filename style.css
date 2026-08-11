@@ -1004,6 +1004,11 @@ input[type="checkbox"]:checked+label {
     display: block;
 }
 
+/* Weekend-linjen under prisen — lidt luft, så de to småt-linjer ikke løber sammen */
+.pakke-price span+span {
+    margin-top: 6px;
+}
+
 .pakke-card--featured .pakke-price span {
     color: rgba(250, 245, 236, 0.8);
 }
