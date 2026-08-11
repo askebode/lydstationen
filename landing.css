@@ -154,8 +154,32 @@
 
 /* Nye tekstlinjer genbruger .steps-note's typografi — kun afstand sættes her */
 .hero-weekend {
-    margin: 0 0 18px;
+    margin: 0 0 30px;
     max-width: 520px;
+}
+
+/* Hero-knapper: .page-hero .hero-actions gælder ikke her, så flex sættes lokalt */
+.landing-hero .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* På mobil skal begge knapper kunne stå på samme række */
+@media (max-width: 520px) {
+    .landing-hero .hero-actions {
+        flex-wrap: nowrap;
+    }
+
+    .landing-hero .hero-actions .btn {
+        flex: 0 1 auto;
+        min-width: 0;
+        padding-left: 16px;
+        padding-right: 16px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        text-align: center;
+    }
 }
 
 .pakker-note {
