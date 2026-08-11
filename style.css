@@ -6,10 +6,12 @@
     --cream: #f4ece0;
     --cream-2: #efe4d4;
     --paper: #faf5ec;
-    --terracotta: #b85c38;
-    --terracotta-dark: #9c4a2c;
-    --clay: #c8674a;
-    --mustard: #d99a4e;
+    /* Neve-inspireret: blågrå frontplade + den røde gain-knap */
+    --slate: #35566b;
+    --slate-dark: #26414f;
+    --slate-light: #4a7089;
+    --neve-red: #b4382c;
+    --neve-red-dark: #932c22;
     --brown: #3a2a20;
     --brown-soft: #5c473b;
     --ink: #2c1e16;
@@ -85,7 +87,7 @@ nav.scrolled {
     font-weight: 600;
     letter-spacing: 0.14em;
     font-size: 0.95rem;
-    color: var(--terracotta-dark);
+    color: var(--slate-dark);
 }
 
 nav ul {
@@ -107,28 +109,28 @@ nav ul a {
 
 nav ul a:hover,
 nav ul a.active {
-    color: var(--terracotta);
+    color: var(--slate);
 }
 
 nav ul a.active {
-    border-bottom: 2px solid var(--terracotta);
+    border-bottom: 2px solid var(--slate);
     padding-bottom: 2px;
 }
 
 .nav-cta {
-    border: 1px solid var(--terracotta);
+    border: 1px solid var(--slate);
     border-radius: 999px;
     padding: 7px 16px;
-    color: var(--terracotta) !important;
+    color: var(--slate) !important;
 }
 
 .nav-cta:hover {
-    background: var(--terracotta);
+    background: var(--slate);
     color: var(--paper) !important;
 }
 
 .nav-cta.active {
-    border-bottom: 1px solid var(--terracotta);
+    border-bottom: 1px solid var(--slate);
     padding-bottom: 7px;
 }
 
@@ -166,13 +168,13 @@ nav ul a.active {
 }
 
 .btn-solid {
-    background: var(--terracotta);
+    background: var(--slate);
     color: var(--paper);
-    border: 1px solid var(--terracotta);
+    border: 1px solid var(--slate);
 }
 
 .btn-solid:hover {
-    background: var(--terracotta-dark);
+    background: var(--slate-dark);
 }
 
 .btn-ghost {
@@ -192,7 +194,7 @@ nav ul a.active {
     letter-spacing: 0.22em;
     font-size: 0.78rem;
     font-weight: 500;
-    color: var(--terracotta);
+    color: var(--slate);
     margin: 0 0 18px;
 }
 
@@ -207,8 +209,8 @@ nav ul a.active {
     padding: 130px clamp(24px, 7vw, 110px) 60px;
     position: relative;
     background:
-        radial-gradient(120% 90% at 80% 0%, #e8d2bb 0%, transparent 55%),
-        linear-gradient(160deg, var(--cream) 0%, #ecdcc8 100%);
+        radial-gradient(120% 90% at 80% 0%, #e7dcca 0%, transparent 55%),
+        linear-gradient(160deg, var(--cream) 0%, #e8dfd1 100%);
     overflow: hidden;
 }
 
@@ -216,7 +218,7 @@ nav ul a.active {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(184, 92, 56, 0.06) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(53, 86, 107, 0.07) 1px, transparent 1px);
     background-size: 4px 4px;
     pointer-events: none;
 }
@@ -328,8 +330,8 @@ nav ul a.active {
 }
 
 .portal-extra a {
-    color: var(--terracotta-dark);
-    border-bottom: 1px solid var(--terracotta);
+    color: var(--slate-dark);
+    border-bottom: 1px solid var(--slate);
     padding-bottom: 1px;
 }
 
@@ -339,8 +341,8 @@ nav ul a.active {
 .page-hero {
     padding: 150px clamp(24px, 8vw, 120px) 70px;
     background:
-        radial-gradient(120% 120% at 85% 0%, #e8d2bb 0%, transparent 55%),
-        linear-gradient(160deg, var(--cream) 0%, #ecdcc8 100%);
+        radial-gradient(120% 120% at 85% 0%, #e7dcca 0%, transparent 55%),
+        linear-gradient(160deg, var(--cream) 0%, #e8dfd1 100%);
 }
 
 .page-hero-inner {
@@ -393,7 +395,7 @@ nav ul a.active {
     font-family: 'Fraunces', serif;
     font-size: 0.85rem;
     letter-spacing: 0.2em;
-    color: var(--terracotta);
+    color: var(--slate);
     margin-bottom: 12px;
 }
 
@@ -461,7 +463,7 @@ nav ul a.active {
 
 .card h3 {
     font-size: 1.5rem;
-    color: var(--terracotta);
+    color: var(--slate);
     margin-bottom: 12px;
 }
 
@@ -494,7 +496,7 @@ nav ul a.active {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 0.78rem;
-    color: var(--terracotta);
+    color: var(--slate);
     margin: 0 0 12px;
 }
 
@@ -542,8 +544,8 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked+label {
-    background: var(--terracotta);
-    border-color: var(--terracotta);
+    background: var(--slate);
+    border-color: var(--slate);
     color: var(--paper);
 }
 
@@ -580,19 +582,19 @@ input[type="checkbox"]:checked+label {
 :root {
     --fc-border-color: var(--line);
     --fc-daygrid-event-dot-width: 6px;
-    --fc-today-bg-color: #f0e0cd;
+    --fc-today-bg-color: #dde5ea;
 }
 
 .fc .fc-button-primary {
-    background-color: var(--terracotta);
-    border-color: var(--terracotta);
+    background-color: var(--slate);
+    border-color: var(--slate);
     text-transform: capitalize;
 }
 
 .fc .fc-button-primary:hover,
 .fc .fc-button-primary:disabled {
-    background-color: var(--terracotta-dark);
-    border-color: var(--terracotta-dark);
+    background-color: var(--slate-dark);
+    border-color: var(--slate-dark);
 }
 
 .fc-toolbar-title {
@@ -628,7 +630,7 @@ input[type="checkbox"]:checked+label {
 
 .rental-card h3 {
     font-size: 1.6rem;
-    color: var(--terracotta);
+    color: var(--slate);
     margin-bottom: 18px;
 }
 
@@ -674,7 +676,7 @@ input[type="checkbox"]:checked+label {
 }
 
 .om-text strong {
-    color: var(--terracotta-dark);
+    color: var(--slate-dark);
 }
 
 .om-media {
@@ -699,7 +701,7 @@ input[type="checkbox"]:checked+label {
    KONTAKT (delt på alle sider)
    ============================================================ */
 .section--kontakt {
-    background: var(--terracotta);
+    background: var(--slate);
     color: var(--paper);
 }
 
@@ -803,7 +805,7 @@ input[type="checkbox"]:checked+label {
     margin-top: 24px;
     align-self: flex-start;
     background: var(--paper);
-    color: var(--terracotta-dark);
+    color: var(--slate-dark);
     border: 1px solid var(--paper);
 }
 
@@ -900,7 +902,7 @@ input[type="checkbox"]:checked+label {
 .step-num {
     font-family: 'Fraunces', serif;
     font-size: 2rem;
-    color: var(--terracotta);
+    color: var(--slate);
     line-height: 1;
     flex-shrink: 0;
 }
@@ -941,8 +943,8 @@ input[type="checkbox"]:checked+label {
 }
 
 .pakke-card--featured {
-    border-color: var(--terracotta);
-    box-shadow: 0 0 0 2px var(--terracotta);
+    border-color: var(--slate);
+    box-shadow: 0 0 0 2px var(--slate);
 }
 
 .pakke-head {
@@ -952,7 +954,7 @@ input[type="checkbox"]:checked+label {
 }
 
 .pakke-card--featured .pakke-head {
-    background: var(--terracotta);
+    background: var(--slate);
     color: var(--paper);
     border-bottom-color: transparent;
 }
@@ -961,7 +963,7 @@ input[type="checkbox"]:checked+label {
     text-transform: uppercase;
     letter-spacing: 0.12em;
     font-size: 0.74rem;
-    color: var(--terracotta);
+    color: var(--slate);
     display: block;
     margin-bottom: 8px;
 }
@@ -988,7 +990,7 @@ input[type="checkbox"]:checked+label {
 .pakke-price {
     font-family: 'Fraunces', serif;
     font-size: 2.2rem;
-    color: var(--terracotta-dark);
+    color: var(--slate-dark);
     line-height: 1.1;
 }
 
@@ -1023,7 +1025,7 @@ input[type="checkbox"]:checked+label {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 0.74rem;
-    color: var(--terracotta);
+    color: var(--slate);
     margin: 16px 0 10px;
 }
 
@@ -1079,7 +1081,7 @@ input[type="checkbox"]:checked+label {
 
 .tilvalg-list li::before {
     content: "—";
-    color: var(--terracotta);
+    color: var(--slate);
     flex-shrink: 0;
 }
 
