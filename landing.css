@@ -152,6 +152,16 @@
     max-width: 520px;
 }
 
+/* Nye tekstlinjer genbruger .steps-note's typografi — kun afstand sættes her */
+.hero-weekend {
+    margin: 0 0 18px;
+    max-width: 520px;
+}
+
+.pakker-note {
+    margin: 22px 0 0;
+}
+
 .hero-social {
     margin: 14px 0 0;
     font-size: 0.9rem;
