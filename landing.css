@@ -195,6 +195,62 @@
     max-width: 520px;
 }
 
+/* ---------------- Transport: zoner og priser ----------------
+   Bevidst en liste i .card frem for en tabel — så kan indholdet
+   ikke give vandret scroll på telefon, og .cards-grid'et folder
+   selv til én kolonne. */
+.zoner {
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.zoner li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
+}
+
+.zone-navn {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    font-weight: 500;
+    color: var(--brown);
+}
+
+.zone-navn small {
+    margin-top: 3px;
+    font-size: 0.78rem;
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--brown-soft);
+}
+
+.zone-pris {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    color: var(--slate-dark);
+    white-space: nowrap;
+}
+
+/* Selvafhentning fremhæves — den billigste vej ud */
+.card--gratis {
+    border-color: var(--slate);
+    box-shadow: 0 0 0 2px var(--slate);
+}
+
+.transport-note {
+    margin-top: 18px;
+}
+
+.transport-note+.transport-note {
+    margin-top: 6px;
+}
+
 .form-intro {
     margin: 0 0 4px;
     font-weight: 500;

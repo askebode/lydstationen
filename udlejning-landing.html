@@ -1,3 +1,7 @@
+---
+# Front matter er nødvendig, for at Jekyll behandler Liquid i denne fil.
+# Transportpriserne hentes fra _data/priser.yml — ret dem dér.
+---
 <!DOCTYPE html>
 <html lang="da">
 
@@ -158,9 +162,8 @@
                 </div>
                 <div class="step">
                     <span class="step-num">3</span>
-                    <p>Afhentning i Egense ved Svendborg — eller vi leverer og henter til fast pris.
-                        Svendborg og omegn: 500 kr. · Resten af Fyn: 1.000 kr. Begge priser inkl. moms,
-                        levering og afhentning.</p>
+                    <p>Afhentning i Egense ved Svendborg — eller vi kører ud til dig og stiller op.
+                        <a href="#transport">Se transportpriser</a>.</p>
                 </div>
             </div>
             <p class="steps-note">Faste priser, ingen tilbuds-loop — du ved hvad det koster på forhånd.</p>
@@ -280,9 +283,50 @@
                     <li>Digital eller analog mixer og simple lydløsninger til bands og DJ</li>
                     <li>Komplet pakke til bands inkl. mikrofoner, DI-bokse osv.</li>
                     <li>Stativer, ekstra kabler, adaptere osv.</li>
-                    <li>Opsætning og nedtagning efter aftale (levering til fast pris — se ovenfor)</li>
                 </ul>
             </div>
+        </div>
+    </section>
+
+    <!-- ===================== TRANSPORT ===================== -->
+    <section id="transport" class="landing-section landing-section--cream">
+        <div class="landing-wrap">
+            <div class="section-head">
+                <span class="section-num">Transport &amp; service</span>
+                <h2>Vi kører ud til dig</h2>
+            </div>
+
+            <div class="cards">
+                <article class="card card--gratis">
+                    <h3>{{ site.data.priser.transport.selvafhentning.titel }}</h3>
+                    <p>{{ site.data.priser.transport.selvafhentning.beskrivelse }}</p>
+                    <ul class="zoner">
+                        <li>
+                            <span class="zone-navn">Egense ved Svendborg</span>
+                            <span class="zone-pris">{{ site.data.priser.transport.selvafhentning.pris }}</span>
+                        </li>
+                    </ul>
+                </article>
+
+                {% for niveau in site.data.priser.transport.niveauer %}
+                <article class="card">
+                    <h3>{{ niveau.titel }}</h3>
+                    <p>{{ niveau.beskrivelse }}</p>
+                    <ul class="zoner">
+                        {% for z in niveau.zoner %}
+                        <li>
+                            <span class="zone-navn">{{ z.zone }}<small>{{ z.omraade }}</small></span>
+                            <span class="zone-pris">{{ z.pris }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </article>
+                {% endfor %}
+            </div>
+
+            <p class="steps-note transport-note">{{ site.data.priser.transport.langt_vaek }}</p>
+            <p class="steps-note transport-note">{{ site.data.priser.transport.zone_note }}</p>
+            <p class="steps-note transport-note">Alle transportpriser er inkl. moms og dækker både ud- og hjemkørsel.</p>
         </div>
     </section>
 

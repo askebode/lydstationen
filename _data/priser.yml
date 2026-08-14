@@ -1,0 +1,50 @@
+# ============================================================
+#  Transport & service — priser
+#
+#  Kanonisk kilde: Notion → "Prisliste — Lydudlejning" →
+#  sektionen "Transport & service". Ved uoverensstemmelse
+#  vinder Notion. Ret her — aldrig direkte i HTML.
+#
+#  Alle priser i DKK INKL. moms (siden er kundevendt og
+#  henvender sig primært til privatkunder). Notion fører
+#  både ekskl. og inkl. moms — her bruges inkl.
+#
+#  Zoner regnes i KØREAFSTAND fra Egense Stationsvej 3,
+#  5700 Svendborg.
+#
+#  Over 30 km (Nyborg, Odense, Nordfyn) publiceres bevidst
+#  ikke: markedsføringen er målrettet Sydfyn, afstanden
+#  varierer fra 31 til 70 km, og prisen sættes fra sag til sag.
+# ============================================================
+
+transport:
+  selvafhentning:
+    titel: Selvafhentning
+    pris: 0 kr.
+    beskrivelse: Hent og aflever selv i Egense. Billigst — og altid en mulighed.
+
+  niveauer:
+    - titel: Levering og afhentning
+      beskrivelse: Vi kører ud med udstyret og henter det igen. Du stiller selv op.
+      zoner:
+        - zone: 0–15 km
+          omraade: Svendborg, Thurø, Tåsinge, Skårup, Ollerup, V. Skerninge, Stenstrup, Oure, Gudme
+          pris: 500 kr.
+        - zone: 15–30 km
+          omraade: Faaborg, Kværndrup, Ringe
+          pris: 750 kr.
+
+    - titel: Fuld service
+      beskrivelse: Vi leverer, stiller op, tager ned og henter igen. Du skal ingenting.
+      zoner:
+        - zone: 0–15 km
+          omraade: Svendborg, Thurø, Tåsinge, Skårup, Ollerup, V. Skerninge, Stenstrup, Oure, Gudme
+          pris: 1.000 kr.
+        - zone: 15–30 km
+          omraade: Faaborg, Kværndrup, Ringe
+          pris: 1.250 kr.
+
+  langt_vaek: Bor du længere væk end 30 km? Skriv til mig — så finder vi ud af det.
+  zone_note: >-
+    Afstand regnes fra Svendborg. Er du i tvivl om hvilken zone du er i, så ring
+    — så siger jeg det med det samme.
