@@ -28,23 +28,20 @@ transport:
       beskrivelse: Vi kører ud med udstyret og henter det igen. Du stiller selv op.
       zoner:
         - zone: 0–15 km
-          omraade: Svendborg, Thurø, Tåsinge, Skårup, Ollerup, V. Skerninge, Stenstrup, Oure, Gudme
+          omraade: Svendborg, Ollerup, V. Skerninge, Stenstrup, Gudme m.fl.
           pris: 500 kr.
         - zone: 15–30 km
-          omraade: Faaborg, Kværndrup, Ringe
+          omraade: Faaborg, Kværndrup, Ringe m.fl.
           pris: 750 kr.
 
     - titel: Fuld service
       beskrivelse: Vi leverer, stiller op, tager ned og henter igen. Du skal ingenting.
       zoner:
         - zone: 0–15 km
-          omraade: Svendborg, Thurø, Tåsinge, Skårup, Ollerup, V. Skerninge, Stenstrup, Oure, Gudme
+          omraade: Svendborg, Ollerup, V. Skerninge, Stenstrup, Gudme m.fl.
           pris: 1.000 kr.
         - zone: 15–30 km
-          omraade: Faaborg, Kværndrup, Ringe
+          omraade: Faaborg, Kværndrup, Ringe m.fl.
           pris: 1.250 kr.
 
   langt_vaek: Bor du længere væk end 30 km? Skriv til mig — så finder vi ud af det.
-  zone_note: >-
-    Afstand regnes fra Svendborg. Er du i tvivl om hvilken zone du er i, så ring
-    — så siger jeg det med det samme.
